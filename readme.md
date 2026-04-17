@@ -34,7 +34,8 @@ Endpoint: GET /api/manipulate/external-users
 Query Params: results (jumlah data), page (halaman).
 
 Contoh Fetching (JavaScript/Axios):
-```
+
+```bash
 async function getUsers(total = 10, page = 1) {
   const response = await axios.get('http://localhost:3000/api/manipulate/external-users', {
     params: { results: total, page: page }
