@@ -12,7 +12,11 @@ export const handleGetExternalUsers = async (req: Request, res: Response) => {
 
     return res.status(200).json(users);
   } catch (error: any) {
-    // Balikan error detail agar terlihat di test
-    return res.status(500).json({ error: error.message });
+    console.error("DETAIL ERROR:", error.message); // Ini akan muncul di terminal node (backend)
+    return res.status(500).json({ 
+      message: 'Error fetching external API',
+      detail: error.message 
+    });
   }
+  
 };
